@@ -15,6 +15,24 @@ You can lock multiple slots at once. Locked slots persist across game restarts. 
 
 Available on [Modrinth](https://modrinth.com/mod/item-lock) for Fabric, Quilt, NeoForge, and Forge.
 
+## Requirements
+
+**Fabric / Quilt**
+- Minecraft 1.21.x
+- Fabric Loader >= 0.18.4 (or Quilt Loader, via its built-in Fabric compatibility layer)
+- Fabric API (Quilted Fabric API on Quilt)
+- Java 21
+
+**NeoForge**
+- Minecraft 1.21.11
+- NeoForge >= 21.11.0-beta
+- Java 21
+
+**Forge**
+- Minecraft 1.21.11
+- Forge >= 1.21.11-61.0.0
+- Java 21
+
 ## Repository layout
 
 This repo contains four independent loader-specific implementations of the same mod, since each loader has its own mod-loading and rendering APIs:
