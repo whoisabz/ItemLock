@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/whoisabz/ItemLock/issues" #optional
 
 [[mods]]
 modId="pvplockmod"
-version="1.0.0"
+version="${file.jarVersion}"
 displayName="ItemLock"
 logoFile="pvplockmod.png"
 authors="You"
