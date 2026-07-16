@@ -32,7 +32,12 @@ public class PvPLockModClient implements ClientModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (toggleLockKey.consumeClick()) {
 				if (client.player != null) {
-					InventoryLockState.toggleForSlot(CompatInventory.getSelectedSlot(client.player.getInventory()));
+					try {
+						InventoryLockState.toggleForSlot(CompatInventory.getSelectedSlot(client.player.getInventory()));
+					} catch (IllegalStateException e) {
+						LOGGER.error("Could not read the selected hotbar slot on this Minecraft version - the toggle key won't work", e);
+						break;
+					}
 				}
 			}
 		});

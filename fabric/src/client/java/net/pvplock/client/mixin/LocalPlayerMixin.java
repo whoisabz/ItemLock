@@ -19,7 +19,15 @@ public abstract class LocalPlayerMixin {
 	@Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true)
 	private void pvplockmod$blockDrop(boolean dropStack, CallbackInfoReturnable<Boolean> cir) {
 		LocalPlayer self = (LocalPlayer) (Object) this;
-		int selected = CompatInventory.getSelectedSlot(self.getInventory());
+		int selected;
+		try {
+			selected = CompatInventory.getSelectedSlot(self.getInventory());
+		} catch (IllegalStateException e) {
+			// Compat detection failed on this version - let the drop happen rather than
+			// crash the game over a locked-slot check we can't perform.
+			PvPLockModClient.LOGGER.error("Could not read the selected hotbar slot on this Minecraft version", e);
+			return;
+		}
 
 		if (InventoryLockState.isSlotLocked(selected)) {
 			self.displayClientMessage(
