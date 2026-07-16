@@ -11,7 +11,6 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 
 import net.minecraft.client.KeyMapping;
-import net.minecraft.resources.Identifier;
 
 public class PvPLockModClient implements ClientModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("pvplockmod");
@@ -22,19 +21,18 @@ public class PvPLockModClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		InventoryLockState.load();
 
-		KeyMapping.Category category = KeyMapping.Category.register(Identifier.fromNamespaceAndPath("pvplockmod", "general"));
-
-		toggleLockKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+		toggleLockKey = KeyBindingHelper.registerKeyBinding(CompatKeyMapping.create(
 			"key.pvplockmod.toggle_lock",
 			InputConstants.Type.KEYSYM,
 			InputConstants.KEY_P,
-			category
+			"pvplockmod",
+			"general"
 		));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (toggleLockKey.consumeClick()) {
 				if (client.player != null) {
-					InventoryLockState.toggleForSlot(client.player.getInventory().getSelectedSlot());
+					InventoryLockState.toggleForSlot(CompatInventory.getSelectedSlot(client.player.getInventory()));
 				}
 			}
 		});

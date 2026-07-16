@@ -9,6 +9,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 
+import net.pvplock.client.CompatInventory;
 import net.pvplock.client.InventoryLockState;
 import net.pvplock.client.PvPLockModClient;
 
@@ -18,7 +19,7 @@ public abstract class LocalPlayerMixin {
 	@Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true)
 	private void pvplockmod$blockDrop(boolean dropStack, CallbackInfoReturnable<Boolean> cir) {
 		LocalPlayer self = (LocalPlayer) (Object) this;
-		int selected = self.getInventory().getSelectedSlot();
+		int selected = CompatInventory.getSelectedSlot(self.getInventory());
 
 		if (InventoryLockState.isSlotLocked(selected)) {
 			self.displayClientMessage(

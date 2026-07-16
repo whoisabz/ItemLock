@@ -24,7 +24,13 @@ public abstract class AbstractContainerScreenMixin {
 	@Shadow
 	protected int topPos;
 
-	@Inject(method = "renderContents", at = @At("TAIL"))
+	// Older Minecraft versions only have a flat render() with this logic inline;
+	// newer versions split it into renderContents() (which recipe-book-based screens
+	// like the player inventory call directly, bypassing render() entirely). Targeting
+	// both covers every version - at most one of the two will actually exist/fire for
+	// any given screen on any given version, and on the rare case both apply the draw
+	// is fully idempotent so a harmless duplicate call is fine.
+	@Inject(method = {"render", "renderContents"}, at = @At("TAIL"), require = 0)
 	private void pvplockmod$drawLockBadges(GuiGraphics graphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
 		if (!InventoryLockState.isLocked()) {
 			return;

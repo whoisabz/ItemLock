@@ -1,5 +1,5 @@
 {
-	"required": true,
+	"required": false,
 	"package": "net.pvplock.client.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
@@ -8,6 +8,6 @@
 		"MultiPlayerGameModeMixin"
 	],
 	"injectors": {
-		"defaultRequire": 1
+		"defaultRequire": 0
 	}
 }

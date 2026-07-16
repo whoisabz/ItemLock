@@ -1,4 +1,5 @@
 {
 	"key.pvplockmod.toggle_lock": "Toggle Slot Lock",
-	"key.category.pvplockmod.general": "ItemLock"
+	"key.category.pvplockmod.general": "ItemLock",
+	"category.pvplockmod.general": "ItemLock"
 }
