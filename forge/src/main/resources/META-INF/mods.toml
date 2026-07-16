@@ -1,0 +1,28 @@
+# See https://docs.minecraftforge.net/en/1.21.x/gettingstarted/modfiles/#modstoml
+modLoader="javafml"
+loaderVersion="[61,)"
+license="CC0-1.0"
+#issueTrackerURL="https://github.com/MyOrganization/MyMod/" #optional
+
+[[mods]]
+modId="pvplockmod"
+version="1.0.0"
+displayName="ItemLock"
+logoFile="pvplockmod.png"
+authors="You"
+
+description='''Press P to lock a hotbar slot in place so you can't accidentally drop or move that item during PvP fights.'''
+
+[[dependencies.pvplockmod]] #recommended
+    modId="forge"
+    mandatory=true
+    versionRange="[61,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.pvplockmod]] #recommended
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21.11,1.22,)"
+    ordering="NONE"
+    side="BOTH"
