@@ -2,7 +2,7 @@
 modLoader="javafml"
 loaderVersion="[61,)"
 license="CC0-1.0"
-#issueTrackerURL="https://github.com/MyOrganization/MyMod/" #optional
+issueTrackerURL="https://github.com/luka321-boo/ItemLock/issues" #optional
 
 [[mods]]
 modId="pvplockmod"

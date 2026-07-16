@@ -7,7 +7,10 @@
 	"authors": [
 		"You"
 	],
-	"contact": {},
+	"contact": {
+		"issues": "https://github.com/luka321-boo/ItemLock/issues",
+		"sources": "https://github.com/luka321-boo/ItemLock"
+	},
 	"license": "CC0-1.0",
 	"icon": "assets/pvplockmod/icon.png",
 	"environment": "client",
