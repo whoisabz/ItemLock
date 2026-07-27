@@ -61,7 +61,7 @@ public class PvPLockMod {
 			toggleLockKey = new KeyMapping(
 				"key.pvplockmod.toggle_lock",
 				InputConstants.Type.KEYSYM,
-				InputConstants.KEY_P,
+				InputConstants.KEY_O,
 				"category." + MODID + ".general"
 			);
 			event.register(toggleLockKey);
