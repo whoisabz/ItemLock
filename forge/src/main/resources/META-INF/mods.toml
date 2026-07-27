@@ -23,6 +23,6 @@ description='''Press O to lock a hotbar slot in place so you can't accidentally 
 [[dependencies.pvplockmod]] #recommended
     modId="minecraft"
     mandatory=true
-    versionRange="[1.21.11,1.22,)"
+    versionRange="[1.21.11,1.22)"
     ordering="NONE"
     side="BOTH"

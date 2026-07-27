@@ -24,8 +24,7 @@ Available on [Modrinth](https://modrinth.com/mod/item-lock) for Fabric, Quilt, N
 - Java 21
 
 **NeoForge**
-- Minecraft 1.21.11
-- NeoForge >= 21.11.0-beta
+- Minecraft 1.21.1 (NeoForge >= 21.1.0) or 1.21.11 (NeoForge >= 21.11.0-beta)
 - Java 21
 
 **Forge**
@@ -35,13 +34,26 @@ Available on [Modrinth](https://modrinth.com/mod/item-lock) for Fabric, Quilt, N
 
 ## Repository layout
 
-This repo contains four independent loader-specific implementations of the same mod, since each loader has its own mod-loading and rendering APIs:
+Every top-level folder is a self-contained Gradle project — run `./gradlew build` from inside it. There is one project per *loader* and per *Minecraft API generation*, because each loader has its own mod-loading and rendering APIs, and Minecraft itself broke the relevant APIs several times across 1.21.x.
 
-- [`fabric/`](fabric) — Fabric (also covers Quilt via its Fabric-compatibility layer)
-- [`neoforge/`](neoforge) — NeoForge
-- [`forge/`](forge) — Forge
+| Folder | Loader | Minecraft |
+|---|---|---|
+| [`fabric/`](fabric) | Fabric / Quilt | 1.21.11 |
+| [`fabric-1.21.9/`](fabric-1.21.9) | Fabric / Quilt | 1.21.9 – 1.21.10 |
+| [`fabric-1.21.6/`](fabric-1.21.6) | Fabric / Quilt | 1.21.6 – 1.21.8 |
+| [`fabric-1.21/`](fabric-1.21) | Fabric / Quilt | 1.21 – 1.21.5 |
+| [`neoforge/`](neoforge) | NeoForge | 1.21.11 |
+| [`neoforge-1.21.1/`](neoforge-1.21.1) | NeoForge | 1.21.1 |
+| [`forge/`](forge) | Forge | 1.21.11 |
 
-Each subfolder is a self-contained Gradle project. See the loader-specific README (where present) or just run `./gradlew build` from inside that folder.
+The Fabric projects also cover Quilt, via Quilt's Fabric-compatibility layer. Each row ships as its own jar, declaring only the versions it was built and tested against.
+
+The variants are near-identical; the differences are confined to a few files. What changed where, going backwards from 1.21.11:
+
+- **1.21.11** renamed `ResourceLocation` to `Identifier`.
+- **1.21.9** introduced `KeyMapping.Category`; before that, keybind categories were plain `String`s.
+- **1.21.6** replaced the render-type batching scheme with strata (`GuiGraphics.nextStratum()`). Below that, an overlay drawn with a plain `fill()` is painted *under* item icons, so `fabric-1.21/` draws through the `RenderType.guiOverlay()` overload instead.
+- **1.21.5** added `Inventory.getSelectedSlot()`. `fabric-1.21/` reads the underlying `selected` field instead, resolving its name through Fabric's `MappingResolver` at runtime.
 
 ## Reporting bugs
 
