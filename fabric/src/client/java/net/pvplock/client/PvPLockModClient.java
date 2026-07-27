@@ -1,4 +1,4 @@
-﻿package net.pvplock.client;
+package net.pvplock.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
 
