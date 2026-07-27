@@ -1,4 +1,4 @@
-package net.pvplock;
+﻿package net.pvplock;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +46,7 @@ public class PvPLockMod {
 			toggleLockKey = new KeyMapping(
 				"key.pvplockmod.toggle_lock",
 				InputConstants.Type.KEYSYM,
-				InputConstants.KEY_P,
+				InputConstants.KEY_O,
 				category
 			);
 			event.register(toggleLockKey);

@@ -1,4 +1,4 @@
-package net.pvplock.client;
+﻿package net.pvplock.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
 
@@ -24,7 +24,7 @@ public class PvPLockModClient implements ClientModInitializer {
 		toggleLockKey = KeyBindingHelper.registerKeyBinding(CompatKeyMapping.create(
 			"key.pvplockmod.toggle_lock",
 			InputConstants.Type.KEYSYM,
-			InputConstants.KEY_P,
+			InputConstants.KEY_O,
 			"pvplockmod",
 			"general"
 		));
