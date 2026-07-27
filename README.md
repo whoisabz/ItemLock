@@ -28,8 +28,7 @@ Available on [Modrinth](https://modrinth.com/mod/item-lock) for Fabric, Quilt, N
 - Java 21
 
 **Forge**
-- Minecraft 1.21.11
-- Forge >= 1.21.11-61.0.0
+- Minecraft 1.21.1 (Forge 52.x) or 1.21.11 (Forge >= 61.0.0)
 - Java 21
 
 ## Repository layout
@@ -45,6 +44,7 @@ Every top-level folder is a self-contained Gradle project — run `./gradlew bui
 | [`neoforge/`](neoforge) | NeoForge | 1.21.11 |
 | [`neoforge-1.21.1/`](neoforge-1.21.1) | NeoForge | 1.21.1 |
 | [`forge/`](forge) | Forge | 1.21.11 |
+| [`forge-1.21.1/`](forge-1.21.1) | Forge | 1.21.1 |
 
 The Fabric projects also cover Quilt, via Quilt's Fabric-compatibility layer. Each row ships as its own jar, declaring only the versions it was built and tested against.
 
