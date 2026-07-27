@@ -2,7 +2,7 @@
 
 A Minecraft mod that stops you from losing loot to a misclick mid-fight.
 
-Press a key (default **P**) while on a hotbar slot to lock it in place. While a slot is locked:
+Press a key (default **O**) while on a hotbar slot to lock it in place. While a slot is locked:
 
 - Pressing **Q** (or Ctrl+Q) does nothing while that slot is selected — you can't accidentally drop the item.
 - Clicking, dragging, shift-clicking, or number-key-swapping that item out of its slot is blocked, in any inventory screen.

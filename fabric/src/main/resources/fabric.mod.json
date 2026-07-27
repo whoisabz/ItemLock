@@ -3,7 +3,7 @@
 	"id": "pvplockmod",
 	"version": "${version}",
 	"name": "ItemLock",
-	"description": "Press P to lock a hotbar slot in place so you can't accidentally drop or move that item during PvP fights.",
+	"description": "Press O to lock a hotbar slot in place so you can't accidentally drop or move that item during PvP fights.",
 	"authors": [
 		"You"
 	],
