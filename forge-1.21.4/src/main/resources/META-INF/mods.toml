@@ -1,0 +1,31 @@
+# See https://docs.minecraftforge.net/en/1.21.x/gettingstarted/modfiles/#modstoml
+modLoader="javafml"
+loaderVersion="[54,)"
+license="CC0-1.0"
+issueTrackerURL="https://github.com/whoisabz/ItemLock/issues" #optional
+
+[[mods]]
+modId="pvplockmod"
+version="${file.jarVersion}"
+displayName="ItemLock"
+logoFile="pvplockmod.png"
+authors="You"
+
+description='''Press O to lock a hotbar slot in place so you can't accidentally drop or move that item during PvP fights.'''
+
+[[dependencies.pvplockmod]] #recommended
+    modId="forge"
+    mandatory=true
+    versionRange="[54,55)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.pvplockmod]] #recommended
+    modId="minecraft"
+    mandatory=true
+    # Deliberately 1.21.1 only. The source also compiles for 1.21.3/1.21.4 (Forge 53/54),
+    # but those get their own builds and their own declared ranges once actually tested -
+    # over-claiming versions is what got this project rejected from Modrinth once.
+    versionRange="[1.21.4,1.21.5)"
+    ordering="NONE"
+    side="BOTH"

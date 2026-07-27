@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"minVersion": "0.8.5",
+	"package": "net.pvplock.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"AbstractContainerScreenMixin",
+		"GuiMixin",
+		"LocalPlayerMixin",
+		"MultiPlayerGameModeMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
