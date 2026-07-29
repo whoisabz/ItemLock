@@ -23,6 +23,9 @@ description='''Press O to lock a hotbar slot in place so you can't accidentally 
 [[dependencies.pvplockmod]] #recommended
     modId="minecraft"
     mandatory=true
-    versionRange="[1.21.11,1.22)"
+    # 1.21.11 only. A future 1.21.12 would be a different API generation and needs its
+    # own build - claiming versions that were never tested is what got this project
+    # rejected from Modrinth once.
+    versionRange="[1.21.11,1.21.12)"
     ordering="NONE"
     side="BOTH"
