@@ -6,6 +6,7 @@
 	"client": [
 		"AbstractContainerScreenMixin",
 		"LocalPlayerMixin",
+		"MinecraftMixin",
 		"MultiPlayerGameModeMixin"
 	],
 	"injectors": {
