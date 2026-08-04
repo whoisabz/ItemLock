@@ -24,7 +24,7 @@ import net.pvplock.PvPLockMod;
 @Mixin(Minecraft.class)
 public abstract class MinecraftMixin {
 
-	@Inject(method = "handleKeybinds", at = @At("HEAD"), remap = false)
+	@Inject(method = "handleKeybinds", at = @At("HEAD"), remap = false, require = 1)
 	private void pvplockmod$blockOffhandSwap(CallbackInfo ci) {
 		Minecraft self = (Minecraft) (Object) this;
 		LocalPlayer player = self.player;

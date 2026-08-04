@@ -15,7 +15,7 @@ import net.pvplock.PvPLockMod;
 @Mixin(LocalPlayer.class)
 public abstract class LocalPlayerMixin {
 
-	@Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true, remap = false)
+	@Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true, remap = false, require = 1)
 	private void pvplockmod$blockDrop(boolean dropStack, CallbackInfoReturnable<Boolean> cir) {
 		LocalPlayer self = (LocalPlayer) (Object) this;
 		// Inventory.getSelectedSlot() only exists from 1.21.5; read the field directly here.

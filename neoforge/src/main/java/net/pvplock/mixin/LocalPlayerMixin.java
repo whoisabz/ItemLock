@@ -15,7 +15,7 @@ import net.pvplock.PvPLockMod;
 @Mixin(LocalPlayer.class)
 public abstract class LocalPlayerMixin {
 
-	@Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "drop(Z)Z", at = @At("HEAD"), cancellable = true, require = 1)
 	private void pvplockmod$blockDrop(boolean dropStack, CallbackInfoReturnable<Boolean> cir) {
 		LocalPlayer self = (LocalPlayer) (Object) this;
 		int selected = self.getInventory().getSelectedSlot();

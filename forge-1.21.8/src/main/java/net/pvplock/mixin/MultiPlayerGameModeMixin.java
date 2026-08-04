@@ -15,7 +15,7 @@ import net.pvplock.InventoryLockState;
 @Mixin(MultiPlayerGameMode.class)
 public abstract class MultiPlayerGameModeMixin {
 
-	@Inject(method = "handleInventoryMouseClick", at = @At("HEAD"), cancellable = true, remap = false)
+	@Inject(method = "handleInventoryMouseClick", at = @At("HEAD"), cancellable = true, remap = false, require = 1)
 	private void pvplockmod$blockLockedSlotClick(int containerId, int slotId, int mouseButton, ClickType clickType, Player player, CallbackInfo ci) {
 		if (!InventoryLockState.isLocked()) {
 			return;
