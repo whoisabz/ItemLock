@@ -9,7 +9,7 @@ modId="pvplockmod"
 version="${file.jarVersion}"
 displayName="ItemLock"
 logoFile="pvplockmod.png"
-authors="You"
+authors="abz"
 
 description='''Press O to lock a hotbar slot in place so you can't accidentally drop or move that item during PvP fights.'''
 
