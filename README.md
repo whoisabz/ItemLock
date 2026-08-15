@@ -28,8 +28,10 @@ Available on [Modrinth](https://modrinth.com/mod/item-lock) for Fabric, Quilt, N
 - Java 21
 
 **Forge**
-- Minecraft 1.21.1 (Forge 52.x) or 1.21.11 (Forge >= 61.0.0)
+- Minecraft 1.21.1, 1.21.3, 1.21.5, 1.21.6, 1.21.7, 1.21.8, 1.21.9, 1.21.10 or 1.21.11
+- The matching Forge major for that version (52, 53, 55, 56, 57, 58, 59, 60, 61)
 - Java 21
+- Forge never shipped for 1.21.2, so neither does ItemLock
 
 ## Repository layout
 
@@ -44,7 +46,18 @@ Every top-level folder is a self-contained Gradle project — run `./gradlew bui
 | [`neoforge/`](neoforge) | NeoForge | 1.21.11 |
 | [`neoforge-1.21.1/`](neoforge-1.21.1) | NeoForge | 1.21.1 |
 | [`forge/`](forge) | Forge | 1.21.11 |
+| [`forge-1.21.10/`](forge-1.21.10) | Forge | 1.21.10 |
+| [`forge-1.21.9/`](forge-1.21.9) | Forge | 1.21.9 |
+| [`forge-1.21.8/`](forge-1.21.8) | Forge | 1.21.8 |
+| [`forge-1.21.7/`](forge-1.21.7) | Forge | 1.21.7 |
+| [`forge-1.21.6/`](forge-1.21.6) | Forge | 1.21.6 |
+| [`forge-1.21.5/`](forge-1.21.5) | Forge | 1.21.5 |
+| [`forge-1.21.4/`](forge-1.21.4) | Forge | 1.21.4 |
+| [`forge-1.21.3/`](forge-1.21.3) | Forge | 1.21.3 |
 | [`forge-1.21.1/`](forge-1.21.1) | Forge | 1.21.1 |
+| [`forge-1.21/`](forge-1.21) | Forge | 1.21 |
+
+Forge needs far more folders than the other loaders because it ships one major version per Minecraft release, so each one is built and declared separately.
 
 The Fabric projects also cover Quilt, via Quilt's Fabric-compatibility layer. Each row ships as its own jar, declaring only the versions it was built and tested against.
 
